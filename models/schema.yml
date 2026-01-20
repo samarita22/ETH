@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_eth
+    description: "Staging table for Ethereum transactions with calculated fields."
+    columns:
+      - name: hash_key
+        description: "Unique identifier for the transaction."
+        tests:
+          - unique
+          - not_null
+      - name: block_number
+        description: "The block number in which the transaction was included."
+      - name: block_timestamp
+        description: "Timestamp of when the block was mined."
+      - name: gas_num
+        description: "Amount of gas used for the transaction."
+      - name: gas_price_num
+        description: "Price per unit of gas for the transaction."
+      - name: from_address
+        description: "Address of the sender."
+      - name: to_address
+        description: "Address of the receiver."
+      - name: value
+        description: "Amount of Ether transferred in the transaction."
+      - name: transaction_type
+        description: "Type of the transaction."
