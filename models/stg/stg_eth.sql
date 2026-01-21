@@ -39,7 +39,8 @@ CALC AS(
     from_address,
     to_address,
     value,
-    transaction_type
+    transaction_type,
+    {{check_transaction_type_desc("transaction_type")}} as transaction_type_desc
 from MAIN
 )
 

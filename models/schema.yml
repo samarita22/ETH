@@ -25,3 +25,19 @@ models:
         description: "Amount of Ether transferred in the transaction."
       - name: transaction_type
         description: "Type of the transaction."
+  - name: stg_variation_between_real_and_calculated_val
+    description: "Staging table for variation analysis between real and calculated values."
+    columns:
+      - name: hash_key
+        description: "Unique identifier for the transaction."
+        tests:
+          - unique
+          - not_null
+      - name: GAS_TOTAL_AMOUNT_VAL
+        description: "Total gas amount calculated from gas and gas price."
+        data_tests:
+          - assert_check_if_numeric
+      - name: calculated_price
+        description: "Price calculated based on internal logic."
+      - name: variation_percentage
+        description: "Percentage variation between real and calculated prices."
