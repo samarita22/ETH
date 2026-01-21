@@ -9,6 +9,7 @@ with base as (
     block_timestamp,
     gas_total_amount_val,
     transaction_type,
+    transaction_type_desc,
     value
     from {{ref('stg_eth')}}
 
@@ -20,7 +21,7 @@ with base as (
 FROM_SEED as(
 select
 replace(snapped_at, ' UTC', '')::TIMESTAMP as snapped_at,
-price as price_from_market
+round(price, 2) as price_from_market
 from {{ref('eth_usd_max')}}
 ),
 
