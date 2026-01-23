@@ -21,7 +21,7 @@ with base as (
 FROM_SEED as(
 select
 replace(snapped_at, ' UTC', '')::TIMESTAMP as snapped_at,
-round(price, 2) as price_from_market
+round(price, 3) as price_from_market
 from {{ref('eth_usd_max')}}
 ),
 
