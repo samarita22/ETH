@@ -36,9 +36,9 @@ jointure as(
 
 TRI AS(select 
 transaction_type_desc,
-avg(coalesce(gas_total_amount_val, 0))/1000000000000 as avg_gas_total_amount_val,
-avg(coalesce(price_from_market, 0))/1000000000000 as avg_price_from_market,
-avg(coalesce(value, 0))/1000000000000 as avg_value
+avg(coalesce(gas_total_amount_val, 0))/1000000000 as avg_gas_total_amount_val,
+avg(coalesce(price_from_market, 0))/1000000000 as avg_price_from_market,
+avg(coalesce(value, 0))/1000000000 as avg_value
 from jointure
 group by transaction_type_desc
 order by avg_value desc
