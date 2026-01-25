@@ -21,11 +21,11 @@ with base as (
 FROM_SEED as(
 select
 replace(snapped_at, ' UTC', '')::TIMESTAMP as snapped_at,
-round(price, 3) as price_from_market
+round(price, 2) as price_from_market
 from {{ref('eth_usd_max')}}
 ),
 
-jointure as(
+final as(
     select
     b.*,
     f.price_from_market
@@ -43,6 +43,7 @@ from jointure
 group by transaction_type_desc
 order by avg_value desc
 )
+
 select 
-*
-from TRI
+* 
+from final
