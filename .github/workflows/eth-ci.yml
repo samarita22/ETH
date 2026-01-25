@@ -58,3 +58,6 @@ jobs:
 
       - name: dbt run
         run: dbt run --target "${{ env.DBT_TARGET }}"
+
+      - name: dbt test
+        run: dbt test --target "${{ env.DBT_TARGET }}"
