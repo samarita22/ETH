@@ -1,0 +1,96 @@
+BTC:
+  outputs:
+    dev:
+      account: QMZETXK-JN51440
+      database: BTC
+      private_key_path: /home/runner/.dbt/rsa_key
+      role: ACCOUNTADMIN
+      schema: DBT_DWEIGEL
+      threads: 1
+      type: snowflake
+      user: vodro
+      warehouse: MY_LARGEWH
+    dev2:
+      account: QMZETXK-JN51440
+      database: BTC
+      private_key_path: /home/runner/.dbt/rsa_key
+      role: ACCOUNTADMIN
+      schema: MARC
+      threads: 1
+      type: snowflake
+      user: vodro
+      warehouse: MY_LARGEWH
+    prod:
+      account: QMZETXK-JN51440
+      database: BTC
+      private_key_path: /home/runner/.dbt/rsa_key
+      role: ACCOUNTADMIN
+      schema: PROD
+      threads: 1
+      type: snowflake
+      user: vodro
+      warehouse: MY_LARGEWH
+  target: dev
+ETH:
+  outputs:
+    dev:
+      account: QMZETXK-JN51440
+      database: ETH
+      private_key_path: "/home/runner/.dbt/rsa_key"
+      role: ACCOUNTADMIN
+      schema: ETH_DEV
+      threads: 4
+      type: snowflake
+      user: vodro
+      #password: Vodounon1234@!
+      warehouse: COMPUTE_WH
+    
+    prod:
+      account: QMZETXK-JN51440
+      database: ETH
+      private_key_path: "/home/runner/.dbt/rsa_key"
+      role: ACCOUNTADMIN
+      schema: PROD
+      threads: 4
+      type: snowflake
+      user: vodro
+      #password: Vodounon1234@!
+      warehouse: COMPUTE_WH
+  target: prod
+ETH_DEMO_PROJECT_1:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      threads: 16
+      account: QMZETXK-JN51440
+      user: vodro
+      database: ETH
+      warehouse: COMPUTE_WH
+      schema: ETH_DEMO_PROJECT_1
+      password: Vodounon1234@!
+      role: ACCOUNTADMIN
+    
+    prod:
+      type: snowflake
+      threads: 16
+      account: QMZETXK-JN51440
+      user: vodro
+      database: ETH
+      warehouse: COMPUTE_WH
+      schema: ETH_DEMO_PROJECT_1
+      password: Vodounon1234@!
+      role: ACCOUNTADMIN
+jaffle_shop:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      threads: 16
+      account: QMZETXK-JN51440
+      user: vodro
+      database: ETH
+      warehouse: COMPUTE_WH
+      schema: test_schema
+      password: Vodounon1234@!
+      role: ACCOUNTADMIN
