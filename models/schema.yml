@@ -41,3 +41,22 @@ models:
         description: "Price calculated based on internal logic."
       - name: variation_percentage
         description: "Percentage variation between real and calculated prices."
+
+
+exposures:
+
+  - name: eth_exposures_dashboard
+    label: ETH Exposures Dashboard
+    type: dashboard
+    maturity: high
+    url: https://lookerstudio.google.com/reporting/e12eb0a5-0d2e-4524-b6cc-49c5f2375311
+    description: >
+      Did someone say "exponential growth"?
+
+    depends_on:
+      - ref('stg_ranking')
+     
+    owner:
+      name: VODOUNON Rodrigue
+      email: rodrigue.vodounon@imsp-uac.org
+      
