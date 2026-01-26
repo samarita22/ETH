@@ -1,1 +1,0 @@
-select hash_key, count(hash_key) from ETH.PROD.STG_VARIATION_BETWEEN_REAL_AND_CALCULATED_VAL group by hash_key having count(hash_key)>1;
