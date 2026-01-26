@@ -54,7 +54,7 @@ jobs:
         run: dbt deps
 
       - name: dbt debug
-        run: dbt debug --target "${{ env.DBT_TARGET }}"
+        run: dbt debug --target prod
 
       - name: dbt run
-        run: dbt run --target "${{ env.DBT_TARGET }}"
+        run: dbt run --target prod
