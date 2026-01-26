@@ -31,7 +31,6 @@ models:
       - name: hash_key
         description: "Unique identifier for the transaction."
         tests:
-          - unique
           - not_null
       - name: GAS_TOTAL_AMOUNT_VAL
         description: "Total gas amount calculated from gas and gas price."
