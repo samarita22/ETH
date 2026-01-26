@@ -24,6 +24,7 @@ where TO_TIMESTAMP(PAYLOAD:block_timestamp) >= (
     select max(block_timestamp) from {{ this }}
 )
 {% endif %}
+qualify row_number() over(partition by PAYLOAD:hash::STRING order by PAYLOAD:hash::STRING  desc) = 1
 ),
 
 CALC AS(
